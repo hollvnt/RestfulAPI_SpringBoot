@@ -1,11 +1,10 @@
-package com.example.hospital.Facade;
+package com.example.hospital.Facade.impl;
 
-import com.example.hospital.DTO.PatientDTO;
 import com.example.hospital.DTO.UserDTO;
-import com.example.hospital.Entity.Patient;
 import com.example.hospital.Entity.User;
-import com.example.hospital.Interfaces.UserFacade;
-import com.example.hospital.Interfaces.UserService;
+import com.example.hospital.Facade.UserFacade;
+import com.example.hospital.Mappers.UserMapper;
+import com.example.hospital.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class UserFacadeImpl implements UserFacade {
     private final UserService userService;
+    private final UserMapper userMapper;
 
     @Override
     public boolean isValidUser(String username, String password) {
@@ -22,9 +22,9 @@ public class UserFacadeImpl implements UserFacade {
 
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
-        User user = mapDtoToEntity(userDTO);
+        User user = userMapper.mapDtoToEntity(userDTO);
         user = userService.saveUser(user);
-        return mapEntityToDto(user);
+        return userMapper.mapEntityToDto(user);
     }
 
     @Override
@@ -35,19 +35,5 @@ public class UserFacadeImpl implements UserFacade {
     @Override
     public String getAuthenticatedPassword(HttpServletRequest request) {
         return userService.getAuthenticatedPassword(request);
-    }
-
-    private User mapDtoToEntity(UserDTO userDTO){
-        return User.builder()
-                .username(userDTO.getUsername())
-                .password(userDTO.getPassword())
-                .build();
-    }
-
-    private UserDTO mapEntityToDto(User user){
-        return UserDTO.builder()
-                .username(user.getUsername())
-                .password(user.getPassword())
-                .build();
     }
 }

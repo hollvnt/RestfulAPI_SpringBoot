@@ -1,8 +1,8 @@
 package com.example.hospital.Controller;
 
 import com.example.hospital.DTO.PatientDTO;
-import com.example.hospital.Interfaces.PatientFacade;
-import com.example.hospital.Interfaces.UserFacade;
+import com.example.hospital.Facade.PatientFacade;
+import com.example.hospital.Facade.UserFacade;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

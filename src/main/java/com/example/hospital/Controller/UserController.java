@@ -1,12 +1,9 @@
 package com.example.hospital.Controller;
 
 import com.example.hospital.DTO.UserDTO;
-import com.example.hospital.Entity.User;
-import com.example.hospital.Interfaces.UserFacade;
+import com.example.hospital.Facade.UserFacade;
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

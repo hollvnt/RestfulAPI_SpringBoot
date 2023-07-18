@@ -1,12 +1,13 @@
-package com.example.hospital.Interfaces;
+package com.example.hospital.Facade;
 
 
+import com.example.hospital.DTO.UserDTO;
 import com.example.hospital.Entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 
-public interface UserService {
+public interface UserFacade {
     boolean isValidUser(String username, String password);
-    User saveUser(User user);
+    UserDTO saveUser(UserDTO userDTO);
     String getAuthenticatedUsername(HttpServletRequest request);
     String getAuthenticatedPassword(HttpServletRequest request);
 }

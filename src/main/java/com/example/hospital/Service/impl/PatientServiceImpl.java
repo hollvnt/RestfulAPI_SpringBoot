@@ -1,10 +1,9 @@
-package com.example.hospital.Service;
-import com.example.hospital.Interfaces.PatientService;
+package com.example.hospital.Service.impl;
 
 import com.example.hospital.Entity.Patient;
 import com.example.hospital.Repository.PatientRepository;
+import com.example.hospital.Service.PatientService;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

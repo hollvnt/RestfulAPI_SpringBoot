@@ -1,8 +1,8 @@
-package com.example.hospital.Service;
+package com.example.hospital.Service.impl;
 
 import com.example.hospital.Entity.User;
-import com.example.hospital.Interfaces.UserService;
 import com.example.hospital.Repository.UserRepository;
+import com.example.hospital.Service.UserService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

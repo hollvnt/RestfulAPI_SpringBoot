@@ -1,6 +1,7 @@
-package com.example.hospital.Interfaces;
+package com.example.hospital.Facade;
 
 import com.example.hospital.DTO.PatientDTO;
+import com.example.hospital.Entity.Patient;
 
 import java.util.List;
 

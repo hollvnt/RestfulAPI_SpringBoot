@@ -1,4 +1,4 @@
-package com.example.hospital.Interfaces;
+package com.example.hospital.Service;
 
 import com.example.hospital.Entity.Patient;
 
